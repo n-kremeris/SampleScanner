@@ -140,7 +140,7 @@ def record(
 
         if print_progress:
             raw_percentages = (
-                peak_in_buffer.astype(numpy.float) /
+                peak_in_buffer.astype(float) /
                 float(2 ** (bit_depth - 1))
             )
             dbfs = [percent_to_db(x) for x in raw_percentages]

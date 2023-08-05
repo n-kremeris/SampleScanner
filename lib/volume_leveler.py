@@ -28,8 +28,8 @@ def peak_rms(data, window_size=480, limits=960):
     maxlimit = max([len(channel) for channel in data])
     max_so_far = 0
     for i in range(
-        max(index - limits, (window_size / 2)),
-        min(index + limits, maxlimit - (window_size / 2))
+        int(max(index - limits, (window_size / 2))),
+        int(min(index + limits, maxlimit - (window_size / 2)))
     ):
         for channel in data:
             index1 = int(i - (window_size / 2))
@@ -41,7 +41,7 @@ def peak_rms(data, window_size=480, limits=960):
                                     len(channel), i, window_size
                                 ))
             it_max = numpy.sqrt(
-                numpy.mean(window.astype(numpy.float) ** 2)
+                numpy.mean(window.astype(float) ** 2)
             ) / (2. ** (bit_depth - 1))
             if it_max > max_so_far:
                 max_so_far = it_max

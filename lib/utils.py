@@ -85,7 +85,8 @@ def trim_mono_data(
 
 
 def normalized(list):
-    return list.astype(numpy.float32) / float(numpy.amax(numpy.abs(list)))
+    #return list.astype(numpy.float32) / float(numpy.amax(numpy.abs(list)))
+    return list.astype(float) / float(numpy.amax(numpy.abs(list)))
 
 
 def start_of(list, threshold=default_silence_threshold, samples_before=1):

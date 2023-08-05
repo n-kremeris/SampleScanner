@@ -1,0 +1,1 @@
+./samplescanner.py --low-key C2 --high-key C7 --key-skip 6 --midi-port-name "CH345:CH345 MIDI 1 32:0" --audio-interface-index 7 --loop  i-a11
